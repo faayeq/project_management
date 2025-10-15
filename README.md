@@ -25,5 +25,7 @@ Notes:
 - All data is editable in `data/*.json`. Extend topics, pages, and texts as needed.
 
 ## License
-Educational prototype for coursework; content and standards references remain subject to their respective copyrights.
 
+This project is licensed under the **MIT License**.
+© 2025 **feeka** — Contributor: **Dumb**
+See the [LICENSE](./LICENSE) file for full details.
