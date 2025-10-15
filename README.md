@@ -24,19 +24,6 @@ Notes:
 - PDF `#page` anchors are supported by most Chromium-based browsers; some viewers may ignore anchors. If anchors don’t jump, open the PDF and use the page number manually.
 - All data is editable in `data/*.json`. Extend topics, pages, and texts as needed.
 
-## GitHub Publishing (GitHub Pages)
-1. Create a new GitHub repository (public is easiest for Pages).
-2. Copy all files in this folder to the repo root.
-3. Commit and push.
-4. In GitHub → Settings → Pages → set Source to `Deploy from a branch`, Branch `main` (root).
-5. Wait for deployment; your site will be available at the GitHub Pages URL shown.
-
-## Extending the Prototype
-- Add more topics in `data/comparisons.json` under `topics` and `entries`.
-- Point `data/standards.json` `href` fields to public PDF URLs if needed.
-- Enrich `data/insights.json` with citations and page anchors.
-- Add bookmarking/search persistence via `localStorage` if desired.
-
 ## License
 Educational prototype for coursework; content and standards references remain subject to their respective copyrights.
 
