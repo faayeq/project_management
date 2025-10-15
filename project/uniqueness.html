@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Uniqueness Analysis · PM Standards Comparator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">PM Standards Hub</div>
+    <nav class="nav">
+      <a href="index.html">Standards Repository</a>
+      <a href="compare.html">Comparison Engine</a>
+      <a href="uniqueness.html" class="active">Uniqueness Analysis</a>
+      <a href="insights.html">Insights Dashboard</a>
+      <a href="wbs.html">Process Generator</a>
+    </nav>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <h1>Uniqueness Analysis</h1>
+      <p>Discover what makes each PM standard distinctive and when to leverage their unique strengths</p>
+    </section>
+
+    <section class="toolbar chips">
+      <button class="chip active" data-filter="ALL">All</button>
+      <button class="chip" data-filter="PMBOK7">PMBOK 7</button>
+      <button class="chip" data-filter="PRINCE2">PRINCE2</button>
+      <button class="chip" data-filter="ISO">ISO 21500/21502</button>
+      <span class="spacer"></span>
+      <input type="text" id="uniqueSearch" class="chip-input" placeholder="Search uniqueness items..."/>
+    </section>
+
+  </main>
+  <section class="repo-grid" id="uniqueGrid"></section>
+
+  <footer class="app-footer">
+    <span>© 2025 PM Standards Comparator · Prototype</span>
+  </footer>
+  <script src="uniqueness.js"></script>
+</body>
+</html>
+
+

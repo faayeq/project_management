@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Compare Standards · PM Standards Comparator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">PM Standards Hub</div>
+    <nav class="nav">
+      <a href="index.html">Standards Repository</a>
+      <a href="compare.html" class="active">Comparison Engine</a>
+      <a href="uniqueness.html">Uniqueness Analysis</a>
+      <a href="insights.html">Insights Dashboard</a>
+      <a href="wbs.html">Process Generator</a>
+    </nav>
+  </header>
+  <main class="container">
+    <h1>Comparison Engine</h1>
+    <div class="toolbar">
+      <label>
+        Select Topic
+        <select id="topicSelect"></select>
+      </label>
+      <label>
+        Filter
+        <input id="topicFilter" type="text" placeholder="Filter within columns"/>
+      </label>
+    </div>
+  </main>
+  <section class="repo-grid" id="compareGrid"></section>
+
+  <footer class="app-footer">
+    <span>© 2025 PM Standards Comparator · Prototype</span>
+  </footer>
+  <script src="compare.js"></script>
+</body>
+</html>
+
+

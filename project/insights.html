@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Insights · PM Standards Comparator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="insights-page">
+  <header class="app-header">
+    <div class="brand">PM Standards Hub</div>
+    <nav class="nav">
+      <a href="index.html">Standards Repository</a>
+      <a href="compare.html">Comparison Engine</a>
+      <a href="uniqueness.html">Uniqueness Analysis</a>
+      <a href="insights.html" class="active">Insights Dashboard</a>
+      <a href="wbs.html">Process Generator</a>
+    </nav>
+  </header>
+  <main class="container">
+    <h1>Insights Dashboard</h1>
+    <div id="insights" class="tab-content">
+      <div class="content-header">
+        <p>Comprehensive analysis of similarities, differences, and unique elements</p>
+      </div>
+
+      <div class="insights-grid">
+        <div class="insight-card similarities">
+          <div class="insight-header">
+            <span class="insight-icon">🤝</span>
+            <h3>Common Practices</h3>
+          </div>
+          <div id="similaritiesContent" class="insight-content"></div>
+        </div>
+
+        <div class="insight-card differences">
+          <div class="insight-header">
+            <span class="insight-icon">🔄</span>
+            <h3>Key Differences</h3>
+          </div>
+          <div id="differencesContent" class="insight-content"></div>
+        </div>
+
+        <div class="insight-card unique">
+          <div class="insight-header">
+            <span class="insight-icon">⭐</span>
+            <h3>Unique Elements</h3>
+          </div>
+          <div id="uniqueContent" class="insight-content"></div>
+        </div>
+      </div>
+
+      <div class="insights-visual">
+        <h3>Standards Coverage Map</h3>
+        <div id="coverageMap" class="coverage-map"></div>
+      </div>
+    </div>
+  </main>
+  <footer class="app-footer">
+    <span>© 2025 PM Standards Comparator · Prototype</span>
+  </footer>
+  <script src="insights.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,10 @@
+{
+  "documents": [
+    { "standard": "PMBOK7", "short": "PMBOK 7", "title": "PMBOK 7th Edition", "href": "pmbok.pdf" },
+    { "standard": "PRINCE2", "short": "PRINCE2", "title": "PRINCE2", "href": "prince2.pdf" },
+    { "standard": "ISO", "short": "ISO", "title": "ISO 21500/21502", "href": "ISO.pdf" }
+  ],
+  "repository": []
+}
+
+

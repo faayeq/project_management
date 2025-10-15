@@ -1,0 +1,31 @@
+{
+  "items": [
+    { "standard": "PMBOK7", "title": "Principle-Based & Value-Driven", "desc": "Shift from process-based to principles-based standard with 12 principles guiding behavior and decisions across any delivery approach.", "page": 45, "tags": ["principles","value","flexibility"] },
+    { "standard": "PMBOK7", "title": "Performance Domains replace Knowledge Areas", "desc": "Eight performance domains that interact as a system of capabilities (Stakeholder, Team, Development Approach, Delivery, Measurement, Uncertainty, etc.).", "page": 86, "tags": ["domains","systems view"] },
+    { "standard": "PMBOK7", "title": "System for Value Delivery", "desc": "Strategic systems view connecting projects to portfolios/programs/operations for value alignment.", "page": 33, "tags": ["strategy","value delivery"] },
+    { "standard": "PMBOK7", "title": "Team Performance Domain", "desc": "Dedicated attention to culture, psychological safety, leadership approaches, and team effectiveness.", "page": 94, "tags": ["team","leadership","culture"] },
+    { "standard": "PMBOK7", "title": "Stakeholder Principle + Domain", "desc": "Engagement is both a guiding principle and a full domain with outcomes and measures.", "page": 87, "tags": ["stakeholders","engagement"] },
+    { "standard": "PMBOK7", "title": "Uncertainty Domain", "desc": "Broader than risk—covers ambiguity, complexity, and volatility; encourages systemic thinking about uncertainty.", "page": 181, "tags": ["uncertainty","complexity","risk"] },
+    { "standard": "PMBOK7", "title": "Tailoring (Dedicated Section)", "desc": "Structured guidance for tailoring based on context and governance; step-by-step approach.", "page": 193, "tags": ["tailoring","context"] },
+    { "standard": "PMBOK7", "title": "Models, Methods, and Artifacts", "desc": "Catalog of tools and techniques to select from rather than prescriptive templates.", "page": 211, "tags": ["toolkit","methods","artifacts"] },
+    { "standard": "PMBOK7", "title": "PMIstandards+ Integration", "desc": "Living digital companion providing evolving practices, examples, and case studies.", "page": 15, "tags": ["digital","knowledge base"] },
+
+    { "standard": "PRINCE2", "title": "Five Integrated Elements", "desc": "Principles, People, Practices, Processes, and Project Context as integrated elements; elevates People as a core element.", "page": 64, "tags": ["people","elements","method"] },
+    { "standard": "PRINCE2", "title": "Seven Defined Processes", "desc": "Clear lifecycle of processes from starting up to closing a project; strong suitability for control and repeatability.", "page": 236, "tags": ["processes","lifecycle"] },
+    { "standard": "PRINCE2", "title": "Four Management Layers", "desc": "Commissioning, Directing, Managing, Delivering governance layers clarifying authority and responsibility.", "page": 95, "tags": ["governance","layers"] },
+    { "standard": "PRINCE2", "title": "Stakeholder Representation on Board", "desc": "Business, User, Supplier roles forming a triad governance model for viability, usability, and deliverability.", "page": 94, "tags": ["stakeholders","governance"] },
+    { "standard": "PRINCE2", "title": "Sustainability as a Performance Target", "desc": "Treats sustainability as a mandatory target alongside cost, time, scope, benefits, risk, quality.", "page": 26, "tags": ["sustainability","targets"] },
+    { "standard": "PRINCE2", "title": "Issues Practice (Change + Issues)", "desc": "Integrates change control and issue management into one practice with a structured technique.", "page": 187, "tags": ["issues","change"] },
+    { "standard": "PRINCE2", "title": "Management Products", "desc": "Formalizes 16 required management products including Business Case and Project Initiation Documentation; includes Digital & Data Management Approach.", "page": 305, "tags": ["products","documents","control"] },
+    { "standard": "PRINCE2", "title": "Customer-Supplier Context", "desc": "Guidance for adapting roles, plans, and practices in formal commercial relationships.", "page": 28, "tags": ["contracts","context"] },
+
+    { "standard": "ISO", "title": "Two-Part Structure (Integrated + Functional Practices)", "desc": "Separates integrated lifecycle guidance from management practices for specific functional areas.", "page": 26, "tags": ["structure","practices"] },
+    { "standard": "ISO", "title": "Pre- and Post-Project Activities", "desc": "Formalizes activities before the project (justification/readiness) and after (benefits realization and sustainability).", "page": 34, "tags": ["lifecycle","benefits"] },
+    { "standard": "ISO", "title": "Dedicated Governance Framework", "desc": "Clarifies authorization, direction, control and explicit Sponsor accountability for objectives.", "page": 17, "tags": ["governance","sponsor"] },
+    { "standard": "ISO", "title": "Customer-Supplier Perspective", "desc": "Guides how governance/team structures adapt when both customer and supplier organizations are involved.", "page": 15, "tags": ["contracts","roles"] },
+    { "standard": "ISO", "title": "Societal Change as Management Practice", "desc": "Includes societal change practice recognizing projects with broad public impact.", "page": 49, "tags": ["societal change","public impact"] },
+    { "standard": "ISO", "title": "Prerequisites for Formalizing Project Management", "desc": "Guides on organizational maturity and readiness before formalizing project management practices.", "page": 24, "tags": ["maturity","readiness"] }
+  ]
+}
+
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WBS · PM Standards Comparator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="wbs-page">
+  <header class="app-header">
+    <div class="brand">PM Standards Hub</div>
+    <nav class="nav">
+      <a href="index.html">Standards Repository</a>
+      <a href="compare.html">Comparison Engine</a>
+      <a href="uniqueness.html">Uniqueness Analysis</a>
+      <a href="insights.html">Insights Dashboard</a>
+      <a href="wbs.html" class="active">Process Generator</a>
+    </nav>
+  </header>
+  <main class="container">
+    <h1>Process Generator</h1>
+    <section class="toolbar" style="display:flex; gap:12px; align-items:flex-end; flex-wrap:wrap;">
+      <label>
+        Scenario
+        <select id="pgScenario">
+          <option value="custom_software">Custom Software Development</option>
+          <option value="innovative_product">Innovative Product Development</option>
+          <option value="government_project">Large Government Project</option>
+        </select>
+      </label>
+      <label>
+        Standard
+        <select id="pgStandard">
+          <option value="PMBOK7">PMBOK 7</option>
+          <option value="PRINCE2">PRINCE2</option>
+          <option value="ISO">ISO 21500/21502</option>
+        </select>
+      </label>
+      <label>
+        Topic
+        <select id="pgTopic"></select>
+      </label>
+      <label>
+        Delivery Approach
+        <select id="pgApproach">
+          <option value="predictive">Predictive</option>
+          <option value="agile">Agile</option>
+          <option value="hybrid" selected>Hybrid</option>
+        </select>
+      </label>
+      <label>
+        Risk Level
+        <select id="pgRisk">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+      </label>
+      <button id="pgGenerate" class="btn primary">Generate</button>
+      <button id="pgExport" class="btn outline">Export Markdown</button>
+    </section>
+
+    <section id="pgOutput" class="repo-grid" style="margin-top:16px;"></section>
+  </main>
+  <footer class="app-footer">
+    <span>© 2025 PM Standards Comparator · Prototype</span>
+  </footer>
+  <script src="process.js"></script>
+</body>
+</html>
+
+

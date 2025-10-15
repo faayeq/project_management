@@ -1,0 +1,48 @@
+{
+  "common": [
+    { "title": "Project Lifecycle Recognition", "citations": [{"std":"PMBOK7","page":25},{"std":"PRINCE2","page":12},{"std":"ISO","page":8}] },
+    { "title": "Stakeholder Centrality", "citations": [{"std":"PMBOK7","page":87},{"std":"PRINCE2","page":43},{"std":"ISO","page":47}] },
+    { "title": "Risk Management Process", "citations": [{"std":"PMBOK7","page":243},{"std":"PRINCE2","page":168},{"std":"ISO","page":42}] },
+    { "title": "Quality Built-In Philosophy", "citations": [{"std":"PMBOK7","page":242},{"std":"PRINCE2","page":149},{"std":"ISO","page":45}] },
+    { "title": "Tailoring and Adaptation", "citations": [{"std":"PMBOK7","page":193},{"std":"PRINCE2","page":48},{"std":"ISO","page":26}] },
+    { "title": "Progressive Planning & Baseline Control", "citations": [{"std":"PMBOK7","page":124},{"std":"PRINCE2","page":118},{"std":"ISO","page":30}] },
+    { "title": "Lessons Learned & Continuous Improvement", "citations": [{"std":"PMBOK7","page":142},{"std":"PRINCE2","page":41},{"std":"ISO","page":52}] },
+    { "title": "Benefits & Business Case", "citations": [{"std":"PMBOK7","page":279},{"std":"PRINCE2","page":74},{"std":"ISO","page":36}] },
+    { "title": "Communications & Reporting", "citations": [{"std":"PMBOK7","page":137},{"std":"PRINCE2","page":61},{"std":"ISO","page":50}] },
+    { "title": "Procurement & Contracts", "citations": [{"std":"PMBOK7","page":138},{"std":"PRINCE2","page":109},{"std":"ISO","page":51}] },
+    { "title": "Scope/Requirements Management", "citations": [{"std":"PMBOK7","page":53},{"std":"PRINCE2","page":26},{"std":"ISO","page":38}] },
+    { "title": "Change Control Process", "citations": [{"std":"PMBOK7","page":227},{"std":"PRINCE2","page":186},{"std":"ISO","page":43}] },
+    { "title": "Governance & Accountability", "citations": [{"std":"PMBOK7","page":36},{"std":"PRINCE2","page":93},{"std":"ISO","page":17}] },
+    { "title": "Measurement & Performance", "citations": [{"std":"PMBOK7","page":160},{"std":"PRINCE2","page":25},{"std":"ISO","page":30}] }
+  ],
+  "differences": [
+    { "area": "Structural Philosophy", "PMBOK7": {"page": "45,86", "text": "Principles + domains; outcomes/value; tailoring and models/methods/artifacts."}, "PRINCE2": {"page": "38,68,232", "text": "Method with principles, practices, processes; product focus; roles; stage control."}, "ISO": {"page": "35", "text": "21500 context + 21502 practices; governance-aligned process guidance."} },
+    { "area": "Terminology and Language", "PMBOK7": {"page": "45", "text": "Performance Domains, Value Delivery System, Tailoring."}, "PRINCE2": {"page": "38", "text": "Themes, Principles, Processes, Products."}, "ISO": {"page": "35", "text": "Subject/Process groups; neutral terminology."} },
+    { "area": "Governance & Roles", "PMBOK7": {"page": "36,40", "text": "Governance functions; principles-driven behaviors; tailor titles."}, "PRINCE2": {"page": "93", "text": "Project Board with named roles; manage by exception."}, "ISO": {"page": "13,17", "text": "Governance and Sponsor accountability."} },
+    { "area": "Planning Approach", "PMBOK7": {"page": "124", "text": "Cadence-agnostic planning domain."}, "PRINCE2": {"page": "118", "text": "Product-based planning; stage boundaries."}, "ISO": {"page": "30", "text": "Clauses 7.2, 7.6, 7.7 for plan/schedule/cost."} },
+    { "area": "Agile Integration", "PMBOK7": {"page": "45", "text": "Integrated; supports predictive→adaptive→hybrid."}, "PRINCE2": {"page": "38", "text": "PRINCE2 Agile as separate publication."}, "ISO": {"page": "35", "text": "Acknowledges approaches; limited integration."} },
+    { "area": "Level of Prescription", "PMBOK7": {"page": "45", "text": "Guiding principles and flexible techniques."}, "PRINCE2": {"page": "38", "text": "Defined processes/roles/documents."}, "ISO": {"page": "35", "text": "High-level, universally applicable guidance."} },
+    { "area": "Benefits & Business Case Management", "PMBOK7": {"page": "279", "text": "Value delivery emphasis."}, "PRINCE2": {"page": "31,74", "text": "Business Case central; stage approvals."}, "ISO": {"page": "17,36", "text": "Structured benefits management practice."} },
+    { "area": "Communications & Reporting", "PMBOK7": {"page": "137", "text": "Models and tailoring guidance."}, "PRINCE2": {"page": "61", "text": "Named reports and templates."}, "ISO": {"page": "48,50", "text": "Process steps for planning/reporting."} },
+    { "area": "Procurement & Contracts", "PMBOK7": {"page": "138,247", "text": "Within planning/project work."}, "PRINCE2": {"page": "28,109", "text": "Supplier role; integrated across practices."}, "ISO": {"page": "51,52", "text": "Clause 7.17 procurement steps."} },
+    { "area": "Scope & Product Focus", "PMBOK7": {"page": "53", "text": "Outcome/value-oriented scope control."}, "PRINCE2": {"page": "26", "text": "Product-based planning with PBS/Flow."}, "ISO": {"page": "7,38", "text": "7.4 scope definition/control/confirmation."} },
+    { "area": "Measurement & Reporting", "PMBOK7": {"page": "86,160,208", "text": "Measurement + Uncertainty domains."}, "PRINCE2": {"page": "25", "text": "Progress practice with tolerances and reports."}, "ISO": {"page": "30", "text": "Monitoring/reporting mapped to processes."} },
+    { "area": "Change Control & Issues", "PMBOK7": {"page": "227", "text": "Tailored mechanisms across domains."}, "PRINCE2": {"page": "186,270", "text": "Issues & change control practice."}, "ISO": {"page": "30,43", "text": "7.10 change control guidance."} }
+  ],
+  "unique_examples": [
+    { "std": "PMBOK7", "title": "Principle-Based standard", "page": "11,45" },
+    { "std": "PRINCE2", "title": "Seven processes lifecycle", "page": "236" },
+    { "std": "ISO", "title": "Two-part integrated/functional practices", "page": "26,34" }
+  ],
+  "coverage": [
+    {"topic":"Planning","PMBOK7":"Comprehensive","PRINCE2":"Comprehensive","ISO":"Comprehensive"},
+    {"topic":"Risk","PMBOK7":"Comprehensive","PRINCE2":"Comprehensive","ISO":"Comprehensive"},
+    {"topic":"Stakeholder","PMBOK7":"Comprehensive","PRINCE2":"Moderate","ISO":"Comprehensive"},
+    {"topic":"Quality","PMBOK7":"Comprehensive","PRINCE2":"Comprehensive","ISO":"Comprehensive"},
+    {"topic":"Resources","PMBOK7":"Moderate","PRINCE2":"Moderate","ISO":"Comprehensive"},
+    {"topic":"Communication","PMBOK7":"Comprehensive","PRINCE2":"Comprehensive","ISO":"Comprehensive"},
+    {"topic":"Procurement","PMBOK7":"Moderate","PRINCE2":"Moderate","ISO":"Comprehensive"}
+  ]
+}
+
+

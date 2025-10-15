@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PM Standards Comparator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">PM Standards Hub</div>
+    <nav class="nav">
+      <a href="index.html" class="active">Standards Repository</a>
+      <a href="compare.html">Comparison Engine</a>
+      <a href="uniqueness.html">Uniqueness Analysis</a>
+      <a href="insights.html">Insights Dashboard</a>
+      <a href="wbs.html">Process Generator</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Standards Repository</h1>
+      <p>Explore all PM standards documentation</p>
+    </section>
+
+    <section class="toolbar chips">
+      <button class="chip active" data-filter="ALL">All Standards</button>
+      <button class="chip" data-filter="PMBOK7">PMBOK 7</button>
+      <button class="chip" data-filter="PRINCE2">PRINCE2</button>
+      <button class="chip" data-filter="ISO">ISO 21500/21502</button>
+      <span class="spacer"></span>
+      <input type="text" id="searchInput" class="chip-input" placeholder="Search topics, tags..."/>
+    </section>
+
+  </main>
+  <section id="library" class="library">
+    <div class="repo-grid" id="repoCards"></div>
+  </section>
+
+  <footer class="app-footer">
+    <span>© 2025 PM Standards Comparator · Prototype</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+

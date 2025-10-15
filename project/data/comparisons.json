@@ -1,0 +1,129 @@
+{
+  "topics": [
+    { "id": "approach", "name": "High-level approach / structure" },
+    { "id": "governance", "name": "Governance & Roles" },
+    { "id": "tailoring", "name": "Tailoring & Adaptation" },
+    { "id": "stakeholders", "name": "Stakeholder Engagement" },
+    { "id": "risk", "name": "Risk Management" },
+    { "id": "planning", "name": "Planning (scope/schedule/cost)" },
+    { "id": "scope", "name": "Scope & Requirements / Product focus" },
+    { "id": "quality", "name": "Quality Management" },
+    { "id": "change", "name": "Change Control & Issues" },
+    { "id": "benefits", "name": "Benefits & Business Case" },
+    { "id": "comms", "name": "Communications & Reporting" },
+    { "id": "procurement", "name": "Procurement & Contracts" },
+    { "id": "lessons", "name": "Lessons Learned & Continuous Improvement" },
+    { "id": "measurement", "name": "Measurement, Performance & Uncertainty" }
+  ],
+  "entries": [
+    { "topic": "approach", "standard": "PMBOK7", "page": 45, "content": "Principles-based (12) + 8 performance domains; systems view with outcomes/value and tailoring." },
+    { "topic": "approach", "standard": "PRINCE2", "page": 38, "content": "Method with integrated elements: Principles, Practices, Processes; product-based planning, roles, stage control." },
+    { "topic": "approach", "standard": "ISO", "page": 35, "content": "21500 context + 21502 guidance; clauses 7.x cover planning, risk, scope, quality; governance-aligned processes." },
+
+    { "topic": "governance", "standard": "PMBOK7", "page": 36, "content": "Organizational governance systems and project functions; tailor governance to context (also pg 40)." },
+    { "topic": "governance", "standard": "PRINCE2", "page": 93, "content": "Project Board governance (Executive, Senior User/Supplier) and manage-by-exception tolerances." },
+    { "topic": "governance", "standard": "ISO", "page": 17, "content": "Defines project governance framework aligned with organizational governance (21500 pg 13)." },
+
+    { "topic": "tailoring", "standard": "PMBOK7", "page": 193, "content": "Tailoring guided by principles and context; select models/methods/artifacts as needed." },
+    { "topic": "tailoring", "standard": "PRINCE2", "page": 48, "content": "Principle: tailor to suit the project; decisions approved by Project Board (also pg 66)." },
+    { "topic": "tailoring", "standard": "ISO", "page": 26, "content": "21502 advises proportional tailoring based on organizational and project context." },
+
+    { "topic": "stakeholders", "standard": "PMBOK7", "page": 87, "content": "Stakeholder Performance Domain—identify, analyse, engage continuously; align expectations and value." },
+    { "topic": "stakeholders", "standard": "PRINCE2", "page": 43, "content": "People/stakeholders emphasis; communications practice; Senior User/Supplier roles represent interests." },
+    { "topic": "stakeholders", "standard": "ISO", "page": 47, "content": "21502 7.12 Stakeholder management—identify, analyse, engage stakeholders across lifecycle." },
+
+    { "topic": "risk", "standard": "PMBOK7", "page": 243, "content": "Uncertainty domain: address threats/opportunities; optimize responses across the system." },
+    { "topic": "risk", "standard": "PRINCE2", "page": 168, "content": "Risk practice: risk mgmt approach, risk register/budget, owners/action owners; techniques/products." },
+    { "topic": "risk", "standard": "ISO", "page": 42, "content": "21502 7.8 Risk management: identify, assess, treat and monitor; ISO terminology." },
+
+    { "topic": "planning", "standard": "PMBOK7", "page": 124, "content": "Planning domain: estimating, scheduling, budgeting, communication, procurement; iterative and cadence-aware." },
+    { "topic": "planning", "standard": "PRINCE2", "page": 118, "content": "Plans practice: product-based planning; project/stage/team plans; stage boundaries control." },
+    { "topic": "planning", "standard": "ISO", "page": 30, "content": "21502 planning (7.2) plus schedule (7.6) and cost (7.7) clauses; adoptable steps." },
+
+    { "topic": "scope", "standard": "PMBOK7", "page": 53, "content": "Outcome/deliverable focus; scope controlled in planning and project work." },
+    { "topic": "scope", "standard": "PRINCE2", "page": 26, "content": "Product-based planning: product descriptions drive scope, quality, acceptance; PBS and Product Flow." },
+    { "topic": "scope", "standard": "ISO", "page": 38, "content": "21502 7.4 Scope management: define, control, confirm scope delivery (21500 pg 7)." },
+
+    { "topic": "quality", "standard": "PMBOK7", "page": 242, "content": "Build quality into processes and deliverables; Delivery domain covers quality topics." },
+    { "topic": "quality", "standard": "PRINCE2", "page": 149, "content": "Quality practice: product quality lifecycle, quality register, review techniques and acceptance criteria." },
+    { "topic": "quality", "standard": "ISO", "page": 45, "content": "21502 7.11 Quality management: plan, assure, control quality." },
+
+    { "topic": "change", "standard": "PMBOK7", "page": 227, "content": "Change across planning and project work; tailoring defines specific control mechanisms." },
+    { "topic": "change", "standard": "PRINCE2", "page": 186, "content": "Issues & change control practice: change proposals, issue registers, responsibilities (also pg 270)." },
+    { "topic": "change", "standard": "ISO", "page": 43, "content": "21502 7.10 Change control: establish framework, assess requests, plan implementation and closure." },
+
+    { "topic": "benefits", "standard": "PMBOK7", "page": 279, "content": "Value delivery system and outcomes focus; benefits thinking embedded in principles." },
+    { "topic": "benefits", "standard": "PRINCE2", "page": 74, "content": "Business Case practice central; continued justification through stages (also pg 31)." },
+    { "topic": "benefits", "standard": "ISO", "page": 36, "content": "21502 7.3 Benefits management: identify, analyse, monitor, maintain benefits aligned to strategy." },
+
+    { "topic": "comms", "standard": "PMBOK7", "page": 137, "content": "Communication integrated across domains; adapt cadence and formats to stakeholders." },
+    { "topic": "comms", "standard": "PRINCE2", "page": 61, "content": "Communications integrated with standard report products (highlight, checkpoint)." },
+    { "topic": "comms", "standard": "ISO", "page": 50, "content": "21502 7.13 Communication management: plan, distribute, monitor impact." },
+
+    { "topic": "procurement", "standard": "PMBOK7", "page": 138, "content": "Procurement within Planning and Project Work; integrate with delivery/governance (also pg 247)." },
+    { "topic": "procurement", "standard": "PRINCE2", "page": 109, "content": "Supplier representation via Senior Supplier; procurement across organizing, plans, quality (also pg 28)." },
+    { "topic": "procurement", "standard": "ISO", "page": 51, "content": "21502 7.17 Procurement: plan, evaluate/select suppliers, administer and close contracts." },
+
+    { "topic": "lessons", "standard": "PMBOK7", "page": 142, "content": "Learning throughout; measurement/feedback support continuous improvement (also pg 279)." },
+    { "topic": "lessons", "standard": "PRINCE2", "page": 41, "content": "Principle: learn from experience; capture lessons to inform tailoring and future projects." },
+    { "topic": "lessons", "standard": "ISO", "page": 52, "content": "21502 7.18 Lessons learned: identify, capture, disseminate and reuse lessons." },
+
+    { "topic": "measurement", "standard": "PMBOK7", "page": 160, "content": "Measurement and Uncertainty domains; outcomes-based measures; handle complexity/ambiguity (also pg 86/208)." },
+    { "topic": "measurement", "standard": "PRINCE2", "page": 25, "content": "Progress practice: tolerances, highlight/exception reports and metrics for stage control." },
+    { "topic": "measurement", "standard": "ISO", "page": 30, "content": "21502 monitoring/reporting: define measures, monitor and report to governance." }
+  ],
+  "detailedTopics": [
+    {
+      "id": "high-level",
+      "title": "High-level approach / structure",
+      "pmbok": {"text":"Principles-based standard (12 principles) + performance domains; outcomes and tailoring focus.","file":"standards/pmbok.html","anchor":"high-level","section":"Principles & Domains","type":"similar"},
+      "prince2": {"text":"Method-based with principles, practices and processes; product-based planning and explicit roles.","file":"standards/prince2.html","anchor":"high-level","section":"Principles & Structure","type":"different"},
+      "iso": {"text":"ISO 21500/21502 offers context and guidance; process/practice oriented and neutral for adoption.","file":"standards/iso.html","anchor":"high-level","section":"Context & Guidance","type":"similar"}
+    },
+    {
+      "id": "governance",
+      "title": "Governance & Roles",
+      "pmbok": {"text":"Describes governance systems; emphasizes tailoring governance to context.","file":"standards/pmbok.html","anchor":"governance","section":"Governance","type":"similar"},
+      "prince2": {"text":"Strong governance model with named roles (Project Board, Executive) and manage-by-exception.","file":"standards/prince2.html","anchor":"governance","section":"Governance","type":"different"},
+      "iso": {"text":"Defines governance at organizational level; aligns governance with strategy.","file":"standards/iso.html","anchor":"governance","section":"Governance","type":"similar"}
+    },
+    {
+      "id": "risk",
+      "title": "Risk Management",
+      "pmbok": {"text":"Risk treated in Uncertainty domain; emphasizes optimizing responses across system.","file":"standards/pmbok.html","anchor":"risk","section":"Risk & Uncertainty","type":"similar"},
+      "prince2": {"text":"Dedicated Risk practice with risk register, owners and templates; treats threats & opportunities.","file":"standards/prince2.html","anchor":"risk","section":"Risk Practice","type":"different"},
+      "iso": {"text":"Structured risk process aligned with ISO risk terminology (identify, assess, treat).","file":"standards/iso.html","anchor":"risk","section":"Risk Management","type":"similar"}
+    },
+    {
+      "id": "stakeholder",
+      "title": "Stakeholder Engagement",
+      "pmbok": {"text":"Stakeholder Performance Domain: identification, analysis and continuous engagement.","file":"standards/pmbok.html","anchor":"stakeholder","section":"Stakeholders","type":"similar"},
+      "prince2": {"text":"Emphasizes stakeholder representation (Senior User/Supplier) and communications practice.","file":"standards/prince2.html","anchor":"stakeholder","section":"Stakeholders","type":"different"},
+      "iso": {"text":"Stakeholder management as a discrete practice; links to governance and strategy.","file":"standards/iso.html","anchor":"stakeholder","section":"Stakeholder Management","type":"similar"}
+    },
+    {
+      "id": "planning",
+      "title": "Planning (scope/schedule/cost)",
+      "pmbok": {"text":"Planning Performance Domain; supports multiple life cycles and delivery cadences.","file":"standards/pmbok.html","anchor":"planning","section":"Planning","type":"similar"},
+      "prince2": {"text":"Product-based planning, stage plans and work packages for control.","file":"standards/prince2.html","anchor":"planning","section":"Plans","type":"different"},
+      "iso": {"text":"Prescriptive clauses for schedule and cost processes; organizational adoption focus.","file":"standards/iso.html","anchor":"planning","section":"Planning","type":"similar"}
+    }
+  ],
+  "insights": {
+    "similarities": [
+      "All require governance, planning, stakeholder engagement, risk and change management.",
+      "Each standard supports tailoring to project size, complexity and context.",
+      "Quality and benefits management are integral in all standards."
+    ],
+    "differences": [
+      "PRINCE2 prescribes named roles and specific management products (e.g., Risk Register, Highlight Reports).",
+      "PMBOK 7 is outcome- and principles-focused (performance domains) rather than prescriptive processes.",
+      "ISO provides clause-level guidance designed for organizational alignment and neutrality."
+    ],
+    "unique": [
+      "PRINCE2: product-based planning and manage-by-exception governance.",
+      "PMBOK: Uncertainty and Measurement performance domains emphasizing outcomes.",
+      "ISO: Formal clauses for procurement and benefits mapped to organizational governance."
+    ]
+  }
+}
