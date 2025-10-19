@@ -27,5 +27,5 @@ Notes:
 ## License
 
 This project is licensed under the **MIT License**.
-© 2025 **feeka** — Contributor: **Dumb**
+© 2025 **feeka** — Contributor: **Dumb**, **Anas**
 See the [LICENSE](./LICENSE) file for full details.
