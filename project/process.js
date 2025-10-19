@@ -1,4 +1,6 @@
 async function loadProcessGenerator(){
+  console.log('🎯 loadProcessGenerator called!');
+  
   const scenarioSel = document.getElementById('pgScenario');
   const stdSel = document.getElementById('pgStandard');
   const topicSel = document.getElementById('pgTopic');
@@ -7,17 +9,43 @@ async function loadProcessGenerator(){
   const generateBtn = document.getElementById('pgGenerate');
   const exportBtn = document.getElementById('pgExport');
   const out = document.getElementById('pgOutput');
-  if(!stdSel || !topicSel || !generateBtn || !out) return;
+  
+  console.log('📦 Elements found:', {
+    scenarioSel: !!scenarioSel,
+    stdSel: !!stdSel,
+    topicSel: !!topicSel,
+    approachSel: !!approachSel,
+    riskSel: !!riskSel,
+    generateBtn: !!generateBtn,
+    exportBtn: !!exportBtn,
+    out: !!out
+  });
+  
+  if(!stdSel || !topicSel || !generateBtn || !out) {
+    console.error('❌ Missing required elements!');
+    return;
+  }
 
   let comparisons, docs, indexData;
   try{
+    console.log('📡 Fetching data files...');
     const [cRes, dRes] = await Promise.all([
       fetch('data/comparisons.json'),
       fetch('data/standards.json')
     ]);
+    console.log('📥 Responses received:', {
+      comparisons: cRes.ok,
+      standards: dRes.ok
+    });
     comparisons = await cRes.json();
     docs = await dRes.json();
+    console.log('✅ Data loaded successfully!', {
+      topics: comparisons.topics.length,
+      entries: comparisons.entries.length,
+      documents: docs.documents.length
+    });
   }catch(e){
+    console.error('❌ Failed to load data:', e);
     out.innerHTML = '<div style="color:#ffb4b4;">Failed to load data. Run via local server.</div>';
     return;
   }
@@ -180,78 +208,137 @@ async function loadProcessGenerator(){
   }
 
   function render(){
+    console.log('🚀 Render function called!');
     const scenario = scenarioSel.value;
     const std = stdSel.value;
     const topic = topicSel.value;
     const approach = approachSel.value;
     const risk = riskSel.value;
     const docHref = hrefOf[std];
+    
+    console.log('📋 Values:', {scenario, std, topic, approach, risk});
 
-    const items = buildChecklist(std, topic, approach, risk);
-    const basePage = (comparisons.entries.find(e=>e.topic===topic && e.standard===std)||{}).page;
-
-    // Build list with inline citations (if index present)
-    const lis = items.map(step => {
-      const cits = findCitations(std, step);
-      const citesHtml = cits.length ? ` <span style="display:block; font-size:12px; color:#6b7280; margin-top:4px;">Sources: ${cits.map(c=>`<a class=\"text-link\" href=\"${docHref}#page=${c.page}\" target=\"_blank\">p.${c.page} — ${c.title?c.title.replace(/\"/g,'&quot;'):''}</a>`).join(' · ')}</span>` : '';
-      return `<li>${step}${citesHtml}</li>`;
-    }).join('');
-
-    // Prefer first citation page for the main button, otherwise base page
-    let firstCitPage = undefined;
-    if(indexData && indexData.items){
-      for(const step of items){ const c=findCitations(std, step)[0]; if(c){ firstCitPage=c.page; break; } }
+    // Show loading state
+    const outputSection = document.getElementById('pgOutputSection');
+    console.log('📦 Output section element:', outputSection);
+    
+    if(outputSection) {
+      outputSection.style.display = 'block';
+      console.log('✅ Output section display set to block');
+      out.innerHTML = '<div style="text-align:center; padding:40px; color:var(--text);"><h3>🔄 Generating Process...</h3><div class="skeleton-loader" style="height:200px; margin-top:20px;"></div></div>';
+      console.log('⏳ Loading state shown');
+      
+      // Scroll to output
+      setTimeout(() => {
+        outputSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
     }
-    const linkPage = firstCitPage || basePage;
 
-    const scenarioName = scenarioSel.options[scenarioSel.selectedIndex].textContent;
-    const topicName = (comparisons.topics.find(t=>t.id===topic)||{}).name || topic;
-    const process = buildStructuredProcess(std, scenario, approach, risk);
+    // Small delay to show loading animation
+    setTimeout(() => {
+      try {
+        console.log('🔧 Starting to build process...');
+        const items = buildChecklist(std, topic, approach, risk);
+        console.log('📝 Checklist items built:', items.length, 'items');
+        
+        const basePage = (comparisons.entries.find(e=>e.topic===topic && e.standard===std)||{}).page;
 
-    const phasesHtml = process.phases.map(ph=>{
-      const acts = ph.activities.map(a=>{
-        const cits = (a.citations||[]).map(c=>`<a class=\"text-link\" href=\"${docHref}#page=${c.page}\" target=\"_blank\">p.${c.page}</a>`).join(' ');
-        return `<li>${a.text} ${cits?`<span style=\"font-size:12px;color:#9fb0e0\">${cits}</span>`:''}</li>`;
-      }).join('');
-      const roles = ph.roles.length?`<div class=\"repo-meta\"><strong>Roles:</strong> ${ph.roles.join(', ')}</div>`:'';
-      const arts = ph.artifacts.length?`<div class=\"repo-meta\"><strong>Artifacts:</strong> ${ph.artifacts.join(', ')}</div>`:'';
-      const gates = ph.gates.length?`<div class=\"repo-meta\"><strong>Gates:</strong> ${ph.gates.join(', ')}</div>`:'';
-      return `<section class=\"compare-card\"><h3>${ph.name}</h3>${roles}${arts}${gates}<ol style=\"padding-left:18px;\">${acts}</ol></section>`;
-    }).join('');
+        // Build list with inline citations (if index present)
+        const lis = items.map(step => {
+          const cits = findCitations(std, step);
+          const citesHtml = cits.length ? ` <span style="display:block; font-size:12px; color:#6b7280; margin-top:4px;">Sources: ${cits.map(c=>`<a class=\"text-link\" href=\"${docHref}#page=${c.page}\" target=\"_blank\">p.${c.page} — ${c.title?c.title.replace(/\"/g,'&quot;'):''}</a>`).join(' · ')}</span>` : '';
+          return `<li>${step}${citesHtml}</li>`;
+        }).join('');
 
-    const notesHtml = process.tailoringNotes.length?`<div class=\"repo-meta\"><strong>Tailoring:</strong> ${process.tailoringNotes.join(' · ')}</div>`:'';
+        // Prefer first citation page for the main button, otherwise base page
+        let firstCitPage = undefined;
+        if(indexData && indexData.items){
+          for(const step of items){ const c=findCitations(std, step)[0]; if(c){ firstCitPage=c.page; break; } }
+        }
+        const linkPage = firstCitPage || basePage;
 
-    out.innerHTML = `
-      <article class="repo-card" style="grid-column: 1 / -1;">
-        <div class="repo-head"><span class="repo-badge">${std}</span><span class="badge">TAILORED</span></div>
-        <h3 class="repo-title">${scenarioName} — ${topicName}</h3>
-        ${notesHtml}
-        <div class="compare-grid" style="margin-top:10px;">${phasesHtml}</div>
-        <div class="repo-actions" style="margin-top:12px;"><a class="btn primary" href="${docHref}${linkPage?`#page=${linkPage}`:''}" target="_blank" rel="noopener">📖 Open in PDF</a></div>
-      </article>
-    `;
+        const scenarioName = scenarioSel.options[scenarioSel.selectedIndex].textContent;
+        const topicName = (comparisons.topics.find(t=>t.id===topic)||{}).name || topic;
+        console.log('🏗️ Building structured process...');
+        const process = buildStructuredProcess(std, scenario, approach, risk);
+        console.log('✅ Process built with', process.phases.length, 'phases');
 
-    // Wire Export button
-    exportBtn.onclick = () => {
-      const md = renderMarkdown(std, scenarioName, topicName, process, docHref);
-      const blob = new Blob([md], {type:'text/markdown'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `${scenario}_${std}_${topic}.md`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-    };
+        const phasesHtml = process.phases.map((ph, index) =>{
+          const acts = ph.activities.map(a=>{
+            const cits = (a.citations||[]).map(c=>`<a class=\"text-link\" href=\"${docHref}#page=${c.page}\" target=\"_blank\">p.${c.page}</a>`).join(' ');
+            return `<li>${a.text} ${cits?`<span style=\"font-size:12px;color:#9fb0e0\">${cits}</span>`:''}</li>`;
+          }).join('');
+          const roles = ph.roles.length?`<div class=\"repo-meta\"><strong>Roles:</strong> ${ph.roles.join(', ')}</div>`:'';
+          const arts = ph.artifacts.length?`<div class=\"repo-meta\"><strong>Artifacts:</strong> ${ph.artifacts.join(', ')}</div>`:'';
+          const gates = ph.gates.length?`<div class=\"repo-meta\"><strong>Gates:</strong> ${ph.gates.join(', ')}</div>`:'';
+          
+          const phaseIcons = ['🚀', '📋', '⚙️', '📊', '✅'];
+          const icon = phaseIcons[index] || '📌';
+          
+          return `<section class=\"compare-card\" style=\"animation-delay: ${index * 0.1}s;\"><h3>${icon} ${ph.name}</h3>${roles}${arts}${gates}<ol style=\"padding-left:18px;\">${acts}</ol></section>`;
+        }).join('');
+
+        const notesHtml = process.tailoringNotes.length?`<div class=\"repo-meta\" style=\"margin-top:16px; padding:16px; background: rgba(79, 124, 255, 0.1); border-radius: 12px; border-left: 3px solid var(--primary);\"><strong>📝 Tailoring Notes:</strong><br>${process.tailoringNotes.map(n=>`<span style=\"display:block; margin-top:6px;\">• ${n}</span>`).join('')}</div>`:'';
+
+        console.log('🎨 Rendering HTML...');
+        out.innerHTML = `
+          <article class="repo-card process-result-card" style="grid-column: 1 / -1;">
+            <div class="repo-head" style=\"display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;\">
+              <div style=\"display:flex; gap:10px; align-items:center;\">
+                <span class="repo-badge">${std}</span>
+                <span class="badge" style=\"background: linear-gradient(135deg, #5de4c7, #33c069); color: #0a0f2a; font-weight:600; padding:6px 12px;\">TAILORED</span>
+              </div>
+            </div>
+            <h3 class="repo-title" style=\"font-size:24px; margin-bottom:8px;\">${scenarioName} — ${topicName}</h3>
+            <p style=\"color:var(--muted); margin-bottom:20px;\">Generated process workflow based on your selected parameters</p>
+            ${notesHtml}
+            <div class="compare-grid" style="margin-top:24px; display:grid; gap:20px;">${phasesHtml}</div>
+            <div class="repo-actions" style="margin-top:24px; display:flex; gap:12px;"><a class="btn primary" href="${docHref}${linkPage?`#page=${linkPage}`:''}" target="_blank" rel="noopener" style=\"flex:1; justify-content:center;\">📖 View Source in PDF</a></div>
+          </article>
+        `;
+        
+        console.log('✅ HTML rendered successfully!');
+
+        // Wire Export button
+        exportBtn.onclick = () => {
+          const md = renderMarkdown(std, scenarioName, topicName, process, docHref);
+          const blob = new Blob([md], {type:'text/markdown'});
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `${scenario}_${std}_${topic}.md`;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          URL.revokeObjectURL(url);
+        };
+      } catch(error) {
+        console.error('❌ Error generating process:', error);
+        out.innerHTML = `<div style="color:#ff6b6b; padding:20px; text-align:center;">
+          <h3>❌ Error Generating Process</h3>
+          <p>${error.message}</p>
+          <pre style="text-align:left; background:rgba(0,0,0,0.3); padding:10px; border-radius:8px; font-size:12px; margin-top:10px;">${error.stack}</pre>
+        </div>`;
+      }
+    }, 300);
   }
 
-  generateBtn.addEventListener('click', render);
+  generateBtn.addEventListener('click', () => {
+    console.log('🖱️ Generate button clicked!');
+    alert('Button clicked! Check console for logs.');
+    render();
+  });
   if(exportBtn) exportBtn.addEventListener('click', (e)=>{ e.preventDefault(); });
-  render();
+  // Don't render on page load - only when user clicks Generate button
+  // render();
+  
+  console.log('✅ Process generator loaded successfully!');
 }
 
-document.addEventListener('DOMContentLoaded', loadProcessGenerator);
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('🌐 DOM Content Loaded!');
+  loadProcessGenerator();
+});
 
 
 

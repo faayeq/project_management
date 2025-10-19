@@ -47,22 +47,40 @@ async function loadComparison() {
     const filterText = (filterEl && filterEl.value || '').toLowerCase();
     const data = comparisons.entries.filter(e => e.topic === topicId);
     const standards = ['PMBOK7', 'PRINCE2', 'ISO'];
+    
+    // Remove loading cards if present
+    const loadingCards = gridEl.querySelectorAll('.loading-card');
+    loadingCards.forEach(card => card.remove());
+    
     gridEl.innerHTML = '';
-    standards.forEach(std => {
+    
+    standards.forEach((std, index) => {
       const item = data.find(d => d.standard === std);
       const doc = docs.documents.find(d => d.standard === std);
       const content = item ? item.content : '—';
       const filtered = filterText ? content.split('\n').filter(line => line.toLowerCase().includes(filterText)).join('\n') : content;
       const pageHref = (item && item.page) ? `${doc.href}#page=${item.page}` : doc.href;
+      
+      // Add icon for each standard
+      const icons = { 'PMBOK7': '📘', 'PRINCE2': '📙', 'ISO': '📗' };
+      const icon = icons[std] || '📄';
+      
       const el = document.createElement('article');
       el.className = 'repo-card';
+      el.style.animationDelay = `${index * 0.1}s`;
       el.innerHTML = `
-        <div class="repo-head"><span class="repo-badge">${doc.short}</span></div>
+        <div class="repo-head">
+          <span class="repo-badge">${icon} ${doc.short}</span>
+        </div>
         <h3 class="repo-title">${comparisons.topics.find(t=>t.id===topicId).name}</h3>
-        <p class="repo-desc">${filtered}</p>
-        <div class="repo-meta"><span class="page-pill">📄 Page ${item?.page || '-'}</span></div>
+        <p class="repo-desc">${filtered || '<em style="color: var(--muted);">No content available</em>'}</p>
+        <div class="repo-meta">
+          <span class="page-pill">📄 Page ${item?.page || '-'}</span>
+        </div>
         <div class="repo-actions">
-          <a class="btn primary" href="${pageHref}" target="_blank" rel="noopener">📖 Open in PDF</a>
+          <a class="btn primary" href="${pageHref}" target="_blank" rel="noopener">
+            <span>📖 Open in PDF</span>
+          </a>
         </div>
       `;
       gridEl.appendChild(el);

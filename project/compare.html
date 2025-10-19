@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="compare-page">
   <header class="app-header">
     <div class="brand">PM Standards Hub</div>
     <nav class="nav">
@@ -20,24 +20,50 @@
       <a href="wbs.html">Process Generator</a>
     </nav>
   </header>
-  <section class="hero">
-    <h1>Comparison Engine</h1>
-    <p>Compare PM standards side-by-side to understand differences, similarities, and best practices</p>
-  </section>
-  <div style="padding: 15px;"></div>
-    <div class="toolbar">
-      <label>
-        Select Topic
-        <select id="topicSelect"></select>
-      </label>
-      <label>
-        Filter
-        <input id="topicFilter" type="text" placeholder="Filter within columns"/>
-      </label>
+  
+    <section class="hero">
+      <h1>🔍 Comparison Engine</h1>
+      <p>Compare PM standards side-by-side to understand differences, similarities, and best practices</p>
+    </section>
+    
+    <div class="comparison-controls">
+      <div class="control-group">
+        <label for="topicSelect">
+          <span class="label-icon">📚</span>
+          <span class="label-text">Select Topic</span>
+        </label>
+        <select id="topicSelect" class="select-modern">
+          <option>Loading topics...</option>
+        </select>
+      </div>
+      
+      <div class="control-group">
+        <label for="topicFilter">
+          <span class="label-icon">🔎</span>
+          <span class="label-text">Filter Content</span>
+        </label>
+        <input id="topicFilter" type="text" class="input-modern" placeholder="Search within comparison..."/>
+      </div>
     </div>
-    <div style="padding: 5px;"></div>
-  <section class="repo-grid" id="compareGrid"></section>
-  <div style="padding: 15px;"></div>
+    
+
+      <section class="compare-grid-wrapper">
+      <div class="comparison-header">
+        <h2>📊 Side-by-Side Comparison</h2>
+        <p class="comparison-subtitle">Analyzing standards across selected topic</p>
+      </div>
+      <div class="repo-grid" id="compareGrid">
+        <div class="loading-card">
+          <div class="skeleton-loader"></div>
+        </div>
+        <div class="loading-card">
+          <div class="skeleton-loader"></div>
+        </div>
+        <div class="loading-card">
+          <div class="skeleton-loader"></div>
+        </div>
+      </div>
+    </section>
   <footer class="app-footer">
     <span>© 2025 PM Standards Comparator · Prototype</span>
   </footer>

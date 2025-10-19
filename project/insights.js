@@ -35,29 +35,39 @@ async function loadInsights() {
   const uniqEl = document.getElementById('uniqueContent');
   const mapEl = document.getElementById('coverageMap');
 
-  if (simEl) simEl.innerHTML = `<ul>${(data.common||[]).map(i=>`<li>${i.title} — ${i.citations.map(c=>`<a class=\"text-link\" href=\"${hrefOf[c.std]}#page=${c.page}\" target=\"_blank\">${c.std} p.${c.page}</a>`).join(', ')}</li>`).join('')}</ul>`;
+  if (simEl) {
+    simEl.classList.remove('loading');
+    simEl.innerHTML = `<ul>${(data.common||[]).map(i=>`<li>${i.title} — ${i.citations.map(c=>`<a class=\"text-link\" href=\"${hrefOf[c.std]}#page=${c.page}\" target=\"_blank\">${c.std} p.${c.page}</a>`).join(', ')}</li>`).join('')}</ul>`;
+  }
 
-  if (diffEl) diffEl.innerHTML = `${(data.differences||[]).map(d=>`
-      <div style="margin-bottom:10px;">
-        <strong>${d.area}</strong>
-        <ul>
-          <li>PMBOK7 (${d.PMBOK7.page}): ${d.PMBOK7.text}</li>
-          <li>PRINCE2 (${d.PRINCE2.page}): ${d.PRINCE2.text}</li>
-          <li>ISO (${d.ISO.page}): ${d.ISO.text}</li>
+  if (diffEl) {
+    diffEl.classList.remove('loading');
+    diffEl.innerHTML = `${(data.differences||[]).map(d=>`
+      <div style="margin-bottom:16px; padding-bottom:12px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <strong style="color:#5de4c7; display:block; margin-bottom:8px;">${d.area}</strong>
+        <ul style="list-style: none; padding-left: 0;">
+          <li style="margin: 8px 0;"><span style="color:#6a9eff; font-weight:500;">PMBOK7</span> (p.${d.PMBOK7.page}): ${d.PMBOK7.text}</li>
+          <li style="margin: 8px 0;"><span style="color:#ffa85d; font-weight:500;">PRINCE2</span> (p.${d.PRINCE2.page}): ${d.PRINCE2.text}</li>
+          <li style="margin: 8px 0;"><span style="color:#78ffd9; font-weight:500;">ISO</span> (p.${d.ISO.page}): ${d.ISO.text}</li>
         </ul>
       </div>`).join('')}`;
+  }
 
-  if (uniqEl) uniqEl.innerHTML = `<ul>${(data.unique_examples||[]).map(u=>`<li>${u.std}: ${u.title} — <a class=\"text-link\" href=\"${hrefOf[u.std]}#page=${u.page}\" target=\"_blank\">p.${u.page}</a></li>`).join('')}</ul>`;
+  if (uniqEl) {
+    uniqEl.classList.remove('loading');
+    uniqEl.innerHTML = `<ul>${(data.unique_examples||[]).map(u=>`<li><strong style="color:#ffd15d;">${u.std}:</strong> ${u.title} — <a class=\"text-link\" href=\"${hrefOf[u.std]}#page=${u.page}\" target=\"_blank\">p.${u.page}</a></li>`).join('')}</ul>`;
+  }
 
   // Coverage map
   if (mapEl) {
+    mapEl.classList.remove('loading');
     const topics = ['Planning','Risk','Stakeholder','Quality','Resources','Communication','Procurement','Integration'];
     const head = `<div class="coverage-table"><table><thead><tr><th>Topic</th><th>PMBOK 7</th><th>PRINCE2</th><th>ISO 21500</th><th>ISO 21502</th></tr></thead><tbody>`;
     const rows = topics.map(t=>`<tr><td><strong>${t}</strong></td>
-      <td><div class="coverage-indicator ${coverageLevel(t,'PMBOK7')}"></div></td>
-      <td><div class="coverage-indicator ${coverageLevel(t,'PRINCE2')}"></div></td>
-      <td><div class="coverage-indicator ${coverageLevel(t,'ISO')}"></div></td>
-      <td><div class="coverage-indicator ${coverageLevel(t,'ISO')}"></div></td>
+      <td><div class="coverage-indicator ${coverageLevel(t,'PMBOK7')}" title="${coverageLevel(t,'PMBOK7')}"></div></td>
+      <td><div class="coverage-indicator ${coverageLevel(t,'PRINCE2')}" title="${coverageLevel(t,'PRINCE2')}"></div></td>
+      <td><div class="coverage-indicator ${coverageLevel(t,'ISO')}" title="${coverageLevel(t,'ISO')}"></div></td>
+      <td><div class="coverage-indicator ${coverageLevel(t,'ISO')}" title="${coverageLevel(t,'ISO')}"></div></td>
     </tr>`).join('');
     const legend = `</tbody></table></div><div class="coverage-legend">
       <span><div class="coverage-indicator comprehensive"></div> Comprehensive</span>

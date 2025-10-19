@@ -20,22 +20,24 @@
       <a href="wbs.html">Process Generator</a>
     </nav>
   </header>
-  <main style="text-align: center;">
-    <section class="hero">
-      <h1>Insights Dashboard</h1>
-      <p>Comprehensive analysis of similarities, differences, and unique elements</p>
+  <main class="insights-container">
+    <section class="hero-insights">
+      <div class="hero-content">
+        <h1>✨ Insights Dashboard</h1>
+        <p>Comprehensive analysis of similarities, differences, and unique elements across PM standards</p>
+      </div>
     </section>
-  </main>
-    <div style="padding: 15px;">
-    </div>
-    <div id="insights" class="tab-content">
+    
+    <div id="insights" class="insights-wrapper">
       <div class="insights-grid">
         <div class="insight-card similarities">
           <div class="insight-header">
             <span class="insight-icon">🤝</span>
             <h3>Common Practices</h3>
           </div>
-          <div id="similaritiesContent" class="insight-content"></div>
+          <div id="similaritiesContent" class="insight-content loading">
+            <div class="skeleton-loader"></div>
+          </div>
         </div>
 
         <div class="insight-card differences">
@@ -43,7 +45,9 @@
             <span class="insight-icon">🔄</span>
             <h3>Key Differences</h3>
           </div>
-          <div id="differencesContent" class="insight-content"></div>
+          <div id="differencesContent" class="insight-content loading">
+            <div class="skeleton-loader"></div>
+          </div>
         </div>
 
         <div class="insight-card unique">
@@ -51,17 +55,23 @@
             <span class="insight-icon">⭐</span>
             <h3>Unique Elements</h3>
           </div>
-          <div id="uniqueContent" class="insight-content"></div>
+          <div id="uniqueContent" class="insight-content loading">
+            <div class="skeleton-loader"></div>
+          </div>
         </div>
       </div>
 
-      <div class="insights-visual">
-        <h3>Standards Coverage Map</h3>
-        <div id="coverageMap" class="coverage-map"></div>
+      <div class="insights-visual-section">
+        <div class="visual-header">
+          <h3>📊 Standards Coverage Map</h3>
+          <p class="visual-subtitle">Comparative coverage analysis across key PM topics</p>
+        </div>
+        <div id="coverageMap" class="coverage-map loading">
+          <div class="skeleton-loader"></div>
+        </div>
       </div>
     </div>
-    <div style="padding: 15px;">
-    </div>
+  </main>
   <footer class="app-footer">
     <span>© 2025 PM Standards Comparator · Prototype</span>
   </footer>
