@@ -20,9 +20,14 @@
       <a href="wbs.html" class="active">Process Generator</a>
     </nav>
   </header>
-  <main class="container">
+  <section class="hero">
     <h1>Process Generator</h1>
-    <section class="toolbar" style="display:flex; gap:12px; align-items:flex-end; flex-wrap:wrap;">
+    <p>Generate a process based on the selected scenario, standard, and topic</p>
+  </section>
+  <div style="padding: 15px;">
+
+  </div>
+    <section class="toolbar" style=" gap:12px; align-items:flex-end; text-align: center;">
       <label>
         Scenario
         <select id="pgScenario">
@@ -39,11 +44,11 @@
           <option value="ISO">ISO 21500/21502</option>
         </select>
       </label>
-      <label>
+      <label style="color: #1d1c1c">
         Topic
         <select id="pgTopic"></select>
       </label>
-      <label>
+      <label style="color: #111;">
         Delivery Approach
         <select id="pgApproach">
           <option value="predictive">Predictive</option>
@@ -51,7 +56,7 @@
           <option value="hybrid" selected>Hybrid</option>
         </select>
       </label>
-      <label>
+      <label style="color: #111;">
         Risk Level
         <select id="pgRisk">
           <option value="low">Low</option>
@@ -64,8 +69,10 @@
     </section>
 
     <section id="pgOutput" class="repo-grid" style="margin-top:16px;"></section>
-  </main>
-  <footer class="app-footer">
+    <div style="padding: 15px;">
+
+    </div>
+  <footer class="app-footer" style="color: white">
     <span>© 2025 PM Standards Comparator · Prototype</span>
   </footer>
   <script src="process.js"></script>

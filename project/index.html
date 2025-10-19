@@ -21,25 +21,27 @@
     </nav>
   </header>
 
-  <main class="container">
+  
     <section class="hero">
       <h1>Standards Repository</h1>
       <p>Explore all PM standards documentation</p>
     </section>
 
-    <section class="toolbar chips">
+    <section class="toolbar chips" >
       <button class="chip active" data-filter="ALL">All Standards</button>
       <button class="chip" data-filter="PMBOK7">PMBOK 7</button>
       <button class="chip" data-filter="PRINCE2">PRINCE2</button>
       <button class="chip" data-filter="ISO">ISO 21500/21502</button>
       <span class="spacer"></span>
-      <input type="text" id="searchInput" class="chip-input" placeholder="Search topics, tags..."/>
+      <input type="text" id="searchInput" class="chip-input" style="width: 15%;" placeholder="Search topics, tags..."/>
     </section>
+  
 
-  </main>
   <section id="library" class="library">
     <div class="repo-grid" id="repoCards"></div>
   </section>
+
+  <div style="padding: 15px;"></div>
 
   <footer class="app-footer">
     <span>© 2025 PM Standards Comparator · Prototype</span>
